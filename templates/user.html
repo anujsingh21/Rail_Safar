@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Railway API</title>
+    <style>
+        .card {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="../static/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-..." crossorigin="anonymous">
+</head>
+<body>
+    <header>
+        <img src="https://law-all.com/image/cache/catalog/data/Category/Stationery/2021/PPS15-800x800.JPG"  width="100" height="100" class="logo">
+        <h1>Rail Safar</h1>
+      </header>
+    <h1>Railway Information</h1>
+    <form id="railwayForm">
+        <label for="pnr">Enter PNR Number:</label>
+        <input type="text" id="pnr" name="pnr" class="search-bar" required>
+        <button type="submit" class="button">Get PNR Status</button>
+    </form>
+    <form id="trainSchedule">
+        <label for="train_number">Enter train number:</label>
+        <input type="text" id="train_number" name="train_number" class="search-bar" required>
+        <button type="submit" class="button">Get Train Schedule</button>
+    </form>
+    <div id="result">
+        <!-- Railway data will be displayed here -->
+    <table id="scheduleTable" style="display:none">
+        <thead>
+            <tr id="train">
+                <!-- train name will be displayed -->
+            </tr>
+            <tr>
+                <th>Station Name</th>
+                <th>Station Code</th>
+                <th>Arrival Time</th>
+                <th>Departure Time</th>
+                <th>Distance to Next Station</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Table rows will be added dynamically here -->
+        </tbody>
+    </table>
+    </div>
+    <button class="chat-button" id="chat-button">Chat</button>
+    <div class="chat-column" id="chat-column" style=>
+      <div class="chat-box" id="chat-box">
+          <div class="chat-bot">RailSafar General ChatBot</div>
+      </div>
+      <button class="close-button" id="close-button">Close</button>
+      <div class="user-input">
+          <input type="text" id="text-input" placeholder="Type your message...">
+          <button id="text-send-btn" class="button">Send Text</button>
+          <button id="voice-input-btn" class="button">Voice Input</button>
+      </div>
+    </div>
+    <div id="pnrenquiry" class="card-container" style="display:none">
+        <div id="d1" class="d1ka">
+            <div id="bkdate" class="card">
+            </div>
+            <div id="qta" class="card">
+            </div>
+            <div id="cls" class="card">
+            </div>
+        </div>
+        <div id="d2" class="d2ka">
+            <div id="ptt" class="card">
+            </div>
+            <div id="ddtf" class="card">
+            </div>
+            <div id="ddtt" class="card">
+            </div>
+        </div>
+        <div id="d3" class="d3ka">
+            <table id="pasd" style="display:none">
+                <thead style="background-color:#007bff">
+                    <tr>
+                        <th>Passenger</th>
+                        <th>booking status</th>
+                        <th>Coach/Berth</th>
+                    </tr>
+                </thead>
+                <tbody style="background-color:white">
+                    <!-- Table rows will be added dynamically here -->
+                </tbody>
+            </table>
+        </div>       
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../static/script.js"></script>
+</body>
+</html>
+

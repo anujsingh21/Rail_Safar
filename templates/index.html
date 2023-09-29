@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Front Page</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            height: 150vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://cdn.pixabay.com/photo/2016/07/29/19/19/railway-1555348_1280.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            
+        }
+        .container {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.typing-heading {
+    font-size: 48px;
+            color: #fff;
+            font-weight: bold;
+            overflow: hidden; /* Hide overflowing text */
+            white-space: nowrap; /* Prevent text from wrapping */
+            border-right: 3px solid transparent; /* Create a typing cursor */
+            animation: typing 3s steps(40) infinite;
+        }
+
+        @keyframes typing {
+            from {
+                width: 0; /* Start with no width (hidden) */
+            }
+            to {
+                width: 100%; /* Type out the entire text */
+            }
+        }
+          
+        .button-container {
+            margin-top: 20px;
+        }
+        .button {
+            display: inline-block;
+            background-color:#3645f0;
+            padding: 15px 25px;
+            color: rgb(0, 0, 1);
+            border-radius: 10px;
+            font-size: 20px;
+            margin: 15px;
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-weight: bold;
+        
+        }
+        .button:hover {
+    background-color: #5fb275;
+    transform: scale(1.05); /* Enlarge the button on hover */
+    transition: background-color 0.3s, transform 0.3s;
+}
+/* User button styles with icon */
+.user-button {
+    background-color: #0074cc; /* Deep blue */
+    color: #fff; /* White text color */
+    padding: 15px 25px;
+    border-radius: 10px;
+    font-size: 18px;
+    margin: 15px;
+    text-decoration: none; /* Remove underline */
+    display: inline-flex;
+    align-items: center; /* Center icon and text vertically */
+}
+
+.user-button img {
+    width: 20px; /* Adjust the icon size as needed */
+    margin-right: 10px; /* Add spacing between icon and text */
+}
+
+.user-button:hover {
+    background-color: #0056b3; /* Darker blue color on hover */
+    transform: scale(1.05);
+    box-shadow: 0px 0px 10px rgba(0, 86, 179, 0.5);
+}
+/* Admin button styles with icon */
+.admin-button {
+    background-color: #0074cc; /* Dark gray */
+    color: #fff; /* White text color */
+    padding: 15px 25px;
+    border-radius: 10px;
+    font-size: 18px;
+    margin: 15px;
+    text-decoration: none; /* Remove underline */
+    display: inline-flex;
+    align-items: center; /* Center icon and text vertically */
+}
+
+.admin-button img {
+    width: 20px; /* Adjust the icon size as needed */
+    margin-right: 10px; /* Add spacing between icon and text */
+}
+
+.admin-button:hover {
+    background-color:#0056b3; /* Darker gray color on hover */
+    transform: scale(1.05);
+    box-shadow: 0px 0px 10px rgba(0, 86, 179, 0.5;
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="typing-heading">Welcome to Rail Safar</h1>
+        <div class="button-container">
+            <a class="user-button" href="{% url 'user' %}">
+                <img src="https://www.pngitem.com/pimgs/m/348-3487313_age-full-name-icon-png-transparent-png.png" alt="User Icon">
+                User
+            </a>
+            <a class="admin-button" href="{% url 'admin' %}">
+                <img src="https://www.pngitem.com/pimgs/m/348-3487313_age-full-name-icon-png-transparent-png.png" alt="Admin Icon">
+                Admin
+            </a>
+        </div>
+    </div>
+    <script>
+        // JavaScript to stop the typing animation after the text is fully typed
+        const typingHeading = document.querySelector(".typing-heading");
+
+        // Get the text content of the heading
+        const headingText = typingHeading.textContent;
+
+        // Calculate the typing duration based on the number of characters
+        const typingDuration = headingText.length * 100; // 100ms per character
+
+        // Remove the animation after the typing duration
+        setTimeout(() => {
+            typingHeading.style.animation = "none";
+        }, typingDuration);
+    </script>
+</body>
+</html>

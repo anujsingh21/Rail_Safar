@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Translate and Text-to-Speech</title>
+    <link rel="stylesheet" type="text/css" href="../static/adm.css" />
+</head>
+<body>
+    <div>
+        <h1>Translate Text</h1>
+        <label for="inputText">Enter Text:</label>
+        <input type="text" id="inputText" placeholder="Enter text to translate" />
+        <button onclick="translateText()">Translate</button>
+        <button onclick="textToVoice()">Text to Speech</button>
+    </div>
+    <div>
+        <!-- This is where the translated text will be displayed -->
+        <p id="translatedText"></p>
+    </div>
+    <div id="google_translate_element"></div>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateelementInit"></script>
+    <script>
+        function googleTranslateelementInit() {
+            new google.translate.TranslateElement(
+                { pageLanguage: 'en' },
+                'google_translate_element'
+            );
+        }
+
+        function translateText() {
+            const inputText = document.getElementById('inputText').value;
+            const translatedText = document.getElementById('translatedText');
+            const languageSelect = document.getElementById('google_translate_element');
+            const selectedLanguage = languageSelect.querySelector('.goog-te-combo').value;
+
+            // Use the Google Translate API to translate the inputText
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', `https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=${selectedLanguage}&dt=t&q=${inputText}`);
+            xhr.send();
+            xhr.onload = () => {
+                if (xhr.status === 200) {
+                    const response = JSON.parse(xhr.responseText);
+                    const translatedTextResult = response[0][0][0];
+                    translatedText.textContent = translatedTextResult;
+                }
+            };
+        }
+    </script>
+    <script>
+        function textToVoice() {
+            const inputText = document.getElementById('translatedText').textContent;
+            const selectedLanguage = document.getElementById('google_translate_element').querySelector('.goog-te-combo').value;
+    
+            const utterance = new SpeechSynthesisUtterance(inputText);
+        
+            utterance.lang = selectedLanguage;
+        
+            window.speechSynthesis.speak(utterance);
+        }
+    </script>
+</body>
+</html>
