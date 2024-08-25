@@ -1,39 +1,27 @@
-# RailSafar
+# Railway Inquiry System with Multilingual AI Chatbot
 
-RailSafar is an innovative solution designed to bridge the communication gap at railway stations by providing bilingual support and enhancing the overall experience for travelers and railway personnel.
+## Overview
+This project enhances the railway inquiry experience by providing answers in any preferred language using an AI-powered chatbot. It integrates machine learning and natural language processing for real-time station announcements and multilingual support.
 
-## Key Features
+## Idea/Approach Details
+- **Web Interface and Mobile Application:** Extends from a web interface to a mobile application, providing answers to user queries in preferred languages (Indian regional or foreign languages).
+- **Multilingual Station Announcements:** Utilizes natural language processing to make station announcements in multiple languages.
+- **Automatic Live Station Data Announcements:** Machine learning models announce live station data in various languages.
+- **Multilingual AI Chatbot:** An AI-powered chatbot supports multilingual queries, allowing users to inquire about train schedules, PNR status, emergency alerts, etc., through text or voice inputs.
+- **Noise Reduction in Speech Recognition:** Machine learning algorithms using frameworks like PyTorch reduce noise during speech recognition in noisy environments.
+- **User Interface:** Users can access information about train schedules, routes, and PNR status directly through the user interface.
 
-### 1. Bilingual Announcements
-- RailSafar enables railway stations to make announcements in both English and the local language.
-- Ensures that all passengers, regardless of language proficiency, can understand important information such as departure and arrival times.
+## Tech Stack
+- **Frontend:** HTML, CSS, JavaScript, React
+- **Backend:** Django framework, Rest API
+- **Database:** PostgreSQL, MongoDB
+- **Speech Recognition:** Google speech-to-text & text-to-speech
 
-### 2. Generative AI Chatbot
-- Incorporates a generative AI chatbot that assists passengers by answering queries in two languages.
-- Provides real-time support for various questions, from schedule inquiries to station facilities.
+## Dependencies
+- **Voice Recognition:** Google speech-to-text & text-to-speech for generating speech in various languages.
+- **Real-Time Data:** IRCTC API for real-time data, such as train schedules and platform changes.
+- **Natural Language Processing:** NLP models like NLTK for processing language inputs.
+- **Network Connectivity:** Requires network connectivity for real-time data access.
 
-### 3. API Integration
-- Offers seamless integration with existing railway systems.
-- Facilitates the conversion of text announcements into the selected regional language, ensuring accurate and timely communication.
-
-### 4. Text-to-Speech Conversion
-- Utilizes a Text-to-Speech (TTS) API to convert written text into spoken words.
-- Enables clear and audible announcements throughout the station, helping passengers stay informed.
-
-## How RailSafar Works
-
-1. **Creating an Announcement**: Railway staff inputs the announcement text in English or the local language.
-2. **Language Selection and Translation**: The announcement is translated into the selected regional language using RailSafar’s translation module.
-3. **Text-to-Speech Conversion**: Upon clicking the announcement button, the translated text is converted into speech using the TTS API.
-4. **Broadcasting the Announcement**: The bilingual audio announcement is broadcasted throughout the railway station.
-
-## Benefits
-
-- **Improved Communication**: Ensures important information is accessible to a wider audience.
-- **Enhanced Passenger Experience**: The AI chatbot provides quick and accurate responses, improving the travel experience.
-- **Efficiency and Accuracy**: API and TTS technology ensure announcements are made efficiently, reducing miscommunication.
-
-## Conclusion
-
-RailSafar leverages advanced AI and language technologies to transform communication at railway stations. By providing bilingual support and real-time assistance, RailSafar enhances the travel experience for passengers and facilitates smoother operations for railway staff.
-
+## License
+This project is licensed under the [MIT License](LICENSE).
