@@ -3,6 +3,16 @@
 ## 🔍 Overview
 This project enhances the railway inquiry experience by providing answers in any preferred language using an AI-powered chatbot. It integrates machine learning and natural language processing for real-time station announcements and multilingual support.
 
+## 📸 Screenshots
+
+### User Interface
+![RailSafar Screenshot 2](railsafar1.png)
+
+### Homepage
+![RailSafar Screenshot 1](railsafar2.png)
+
+
+
 ## 💡 Idea/Approach Details
 - **🖥️ Web Interface and Mobile Application:** Extends from a web interface to a mobile application, providing answers to user queries in preferred languages (Indian regional or foreign languages).
 - **🔊 Multilingual Station Announcements:** Utilizes natural language processing to make station announcements in multiple languages.
